@@ -1,0 +1,273 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Olympics Dashboard</title>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/lay.css">
+
+</head>
+<body>
+<div>
+    <div id="cd-vertical-nav">
+        <ul>
+            <li>
+                <a href="#header"><span class="cd-dot"></span>
+                    <span class="cd-label">Title</span>
+                </a>
+            </li>
+            <li>
+                <a href="#section1"><span class="cd-dot"></span>
+                    <span class="cd-label">Introduction</span>
+                </a>
+            </li>
+            <li>
+                <a href="#section2"><span class="cd-dot"></span>
+                    <span class="cd-label">Medal Distribution</span>
+                </a>
+            </li>
+            <li>
+                <a href="#section3"><span class="cd-dot"></span>
+                    <span class="cd-label">Participation</span>
+                </a>
+            </li>
+            <li>
+                <a href="#section4"><span class="cd-dot"></span>
+                    <span class="cd-label">Sports Distribution</span>
+                </a>
+            </li>
+            <li>
+                <a href="#section5"><span class="cd-dot"></span>
+                    <span class="cd-label">Medals</span>
+                </a>
+            </li>
+            <li>
+                <a href="#section6"><span class="cd-dot"></span>
+                    <span class="cd-label">Conclusion</span>
+                </a>
+            </li>
+            <li>
+                <a href="#section7"><span class="cd-dot"></span>
+                    <span class="cd-label">Team</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <header id="header" class="full-height" style="height: 100%; width:100%; margin-right: 0; margin-left: 0">
+        <img src="./img/rings.png">
+        <div class="row justify-content-center"
+             style="height: 50%; width:100%; margin-right: 0; margin-left: 0;z-index: 2;">
+            <h1 class="text-center" style="margin-top:100px; padding-top:140px; padding-bottom:0px;"
+                data-aos="fade-in" data-aos-delay="0">
+                The Olympic Games - a data Story
+            </h1>
+        </div>
+        <div class="row justify-content-center"
+             style="height: 50%; width:100%; margin-right: 0; margin-left: 0;z-index: 2;">
+            <h4 class="text-center" data-aos="fade-in" data-aos-delay="250">.<br>
+                A visual story on the gender distribution in olympics
+            </h4>
+        </div>
+
+        <div style="height:450px"></div>
+        <a href="#section1" class="cd-scroll-down" style="z-index: 2;"></a>
+    </header>
+    <div id="section1">
+        <h1 class="text-center" style="padding-top:50px; padding-bottom:0px;"
+            data-aos="fade-in" data-aos-delay="0">
+            Olympics of Men?</h1>
+        <div class="row">
+            <div class="col-md-3" data-aos="fade-in" data-aos-delay="0">
+                <div style="width:30%;height:0;padding-bottom:100%;position:relative; margin-left:70px; margin-top:70px"><img src="https://media.giphy.com/media/mdms0pfqRJ44qXlHqD/giphy.gif"  alt="#" width="300px"/></div>
+            </div>
+
+            <div class="col-md-9">
+                <p style="margin-top:10px;padding: 10px 80px 0;text-align: justify; font-size: 26px "
+                   data-aos="fade-in" data-aos-delay="0">The Olympic Games are widely regarded as the world's greatest athletic tournament. This event, which occurs every four years, attracts almost 200 nations. And they alternate with the  Summer and Winter Olympics every two years during these four years. With the medals and ceremonies in the Olympics, there is a sense of pride and a knowledge of cultural history.</br></br>
+                    The Olympics have always been dominated by men since its inception. The first Olympics were held in 1896, with <span style="font-size: 30px; font-weight: bold">zero</span> women participation. There has always been a lot of disparity between men and women in the Olympics participation.
+                    In the year 1900, just <strong>33</strong> women competed in the Olympics.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+    <div id="section2" class="row justify-content-md-center">
+        <div class="col-md-4 lab-bar" data-aos="fade-in" data-aos-delay="0">
+            <div style="font-size: 30px" >
+                <div>
+                    <p style="padding-top: 40px"><strong>Which country has the most medals of Olympics Games?</strong></p>
+                    <button id="know-btn" onclick="loadMedal()">Click to view medals over the years</button>
+                </div>
+                <p id="medal-text">USA has the most medals in Olympics Games in a total of <strong style="color: crimson">5637</strong> medals, followed by Russia, Germany, UK and France.</p>
+            </div>
+            <div id="barDiv" style="height: 75%; width:100%; margin-top:60px">
+            </div>
+        </div>
+        <div class="col-md-6 lab-map" data-aos="fade-in" data-aos-delay="0">
+            <div id="mapDiv"
+                 style="height: 70%; width: 100%;">
+            </div>
+            <div id="brushDiv"
+                 style="height: 15%; width:100%; padding-top: 7px">
+                <button onclick="resetBrushing()" id="brush-reset">Reset</button>
+            </div>
+            <div>
+                <p style="padding-top:30px"><strong>Do you see the spikes after 1994?</strong><br> It is because Winter and Summer olympics started alternating in every two years.</p>
+            </div>
+        </div>
+    </div>
+    <div class="row justify-content-md-center" id="section3">
+        <div class="col-md-4" style="padding-top: 10px; font-size: 18px;" data-aos="fade-in" data-aos-delay="0">
+            <div style="height: 750px">
+                <p style="padding-top: 40px; font-size: 30px;"><strong>Women Participation not even half of men !</strong></p>
+                <p>
+                    With <strong>ZERO</strong> women participating in the 1st olympics to more than 6000 women participating in the 2016 olympics, participation of men has always been twice than that of women.
+                </p>
+                <p>
+                    And as we can see there are 3 dips in the line chart, it is on the year of 1932, 1956, and 1980.
+                </p>
+                <div id="facts">
+                </div>
+                <div>
+                    <button id="button-circles" onclick="appendCircles()">What happened?</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6" data-aos="fade-in" data-aos-delay="0">
+            <div id="area-chart1"
+                 style="height:60%;">
+            </div>
+            <div id="story" style="height: 20%"> </div>
+        </div>
+
+    </div>
+    <div class="row" id="section4">
+        <div class="col-7" data-aos="fade-in" data-aos-delay="0">
+            <p style="padding-left: 200px; padding-top: 100px; font-size: 30px">As we saw above, women's participation is constantly growing up until early 1980. There is a spike in 1980 and increased rapidly up until now. USA has the most women delegates in Olympic Games followed by Germany, Russia, UK and France.
+            </p>
+            <div id="story2"></div>
+        </div>
+        <div class="col-4 align-self-center" id="pieDiv"
+             style="height: 100%; width:40%;">
+        </div>
+    </div>
+    <div id="section5" class="row pd-5">
+        <div class="container d-flex">
+            <div class="col-md-4 align-self-center" id="pieNovel"
+                 style="height: 100%; width:45%; margin-left: 50px; vertical-align: top" data-aos="fade-in" data-aos-delay="0">
+            </div>
+            <div class="col-md-5" style="padding-top: 100px; font-size: 27px; text-align: justify" data-aos="fade-in" data-aos-delay="0" >
+                <p style="font-size: 34px; font-weight: bolder; text-align: left;">Medal Distribution for top ten countries based on gender</p>
+                <ul style="list-style: square; margin-left: 20px; margin-top: 40px;">
+                    <li>Clicking on the country shows the medal distribution for it based on gender.</li>
+                    <li>Click the centre circle to revert to the original visualization.</li>
+                </ul>
+                <p class="mt-5">Hover your mouse over the pie chart to see the total number of medals and more information.</p>
+            </div>
+        </div>
+    </div>
+    <div id="section6" >
+        <div class="container pt-5 pl-5 pr-5 ml-5 mr-5" style="text-align: justify; font-size: 22px">
+            <h1>Our Thoughts</h1>
+            <div class="container pt-5 pl-5 pr-5 ml-5 mr-5" style="padding: 0 60px 0 30px; font-size: 24px">
+                <p>Historically, female athletes have been treated, portrayed and looked upon differently from their male counterparts.
+                    In the early days of the Olympic Games, many NOCs sent fewer female competitors because they would incur the cost of a chaperone, which was not necessary for the male athletes.
+                    While inequality in participation has declined throughout history, women are still sometimes treated differently at the Games themselves.</p>
+                <p>The 2012 Olympics was the first in which almost every country sent at least one woman.</p>
+                <p>We need to understand that promoting girl's sports participation is not just a trendy ideal.
+                    It’s a smart, powerful action we can take as individuals and as a community to improve girls’ physical, mental, and emotional health.</p>
+                <p>Help girls recognize that athleticism and femininity are not mutually exclusive and that sweat, hard work, and strength are not solely masculine realms. Support women’s sports by attending female sporting events or signing up to coach a girl’s youth team.
+                </p>
+            </div>
+        </div>
+    </div>
+    <div id="section7">
+        <div class="row">
+            <h1>Our Team</h1>
+        </div>
+        <div class="row" id="name-cards">
+            <div class="col-md-2"></div>
+            <div class="col-md-2">
+                <div class="team-img">
+                    <img src="./img/soumy.jpeg" alt="#">
+                    <h4>Soumy Jain</h4>
+                    <a href="https://www.linkedin.com/in/soumy-jain/"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com/soumyjain14"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="team-img">
+                    <img src="./img/ani.jpeg" alt="#">
+                    <h4>Anirudh Srikanth</h4>
+                    <a href="https://www.linkedin.com/in/anirudhs1998"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com/anirudhsrikanth-cs"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="team-img">
+                    <img src="./img/mansi1.jpeg" alt="#">
+                    <h4>Mansi Sankhe</h4>
+                    <a href="https://www.linkedin.com/in/mansi-sankhe-61b6b61a1"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com/sankhemansi25"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="team-img">
+                    <img src="./img/sarthak1.jpeg" alt="#">
+                    <h4>Sarthak Kahaliya</h4>
+                    <a href="https://www.linkedin.com/in/sarthak-kahaliya/"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com/SarthakKahaliya"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+            <div class="col-md-2"></div>
+        </div>
+    </div>
+</div>
+
+
+<!-- - - - - - - - - - - - >
+<    Load JS libraries     >
+<- - - - - - - - - - - - -->
+
+<!-- BOOTSTRAP -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+
+<!-- d3 -->
+<script src="https://d3js.org/d3.v7.min.js"></script>
+<script src="https://d3js.org/d3-array.v2.min.js"></script>
+<script src="https://d3js.org/d3-geo.v2.min.js"></script>
+
+<script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+<script src="https://d3js.org/topojson.v2.min.js"></script>
+<script src="https://d3js.org/d3-geo.v1.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init({
+        offset: 100,
+        easing: 'ease-in-quart',
+        duration: 800,
+    });
+</script>
+
+<!-- OWN JS -->
+<script src="js/pieNovel.js"></script>
+<script src="js/pieChart.js"></script>
+<script src="js/brushVis.js"></script>
+<script src="js/mapBarVis.js"></script>
+<script src="js/mapVis.js"></script>
+<script src="js/barVis.js"></script>
+<script src="js/main.js"></script>
+<script src="js/counter.js"></script>
+
+</body>
+</html>

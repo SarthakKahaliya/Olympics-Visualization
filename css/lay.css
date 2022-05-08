@@ -1,0 +1,261 @@
+
+/* CAROUSEL DOTS */
+#cd-vertical-nav a {
+    color: #000;
+    text-decoration: none;
+}
+#cd-vertical-nav {
+    position: fixed;
+    left:20px;
+    top: 50%;
+    bottom: auto;
+    --webkit-transform: translateY(-50%);
+    --moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    --o-transform: translateY(-50%);
+    transform: translateY(-50%);
+    z-index: 1;
+}
+#cd-vertical-nav li {
+    text-align: left;
+}
+#cd-vertical-nav a {
+    display: inline-block;
+    /* prevent weird movements on hover when you use a CSS3 transformation - webkit browsers */
+    --webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+
+}
+#cd-vertical-nav a {
+    display: inline-block;
+    /* prevent weird movements on hover when you use a CSS3 transformation - webkit browsers */
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+
+}
+#cd-vertical-nav a:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+#cd-vertical-nav a span {
+    float: left;
+    display: inline-block;
+    --webkit-transform: scale(0.6);
+    --moz-transform: scale(0.6);
+    -ms-transform: scale(0.6);
+    --o-transform: scale(0.6);
+    transform: scale(0.6);
+}
+#cd-vertical-nav a:hover span {
+    --webkit-transform: scale(1);
+    --moz-transform: scale(1);
+    -ms-transform: scale(1);
+    --o-transform: scale(1);
+    transform: scale(1);
+    opacity :0.8;
+}
+#cd-vertical-nav a:hover .cd-label {
+    opacity: 1;
+    z-index: 0;
+}
+#cd-vertical-nav a.is-selected .cd-dot {
+    background-color: black;
+    opacity: 1;
+}
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.cd-dot {
+    position: relative;
+    /* we set a top value in order to align the dot with the label. If you change label's font, you may need to change this top value*/
+    top: 8px;
+    height: 12px;
+    width: 12px;
+    border-radius: 50%;
+    background-color: #bb9b64ff;
+    -webkit-transition: -webkit-transform 0.2s, background-color 0.5s;
+    -moz-transition: -moz-transform 0.2s, background-color 0.5s;
+    transition: transform 0.2s, background-color 0.5s;
+    -webkit-transform-origin: 50% 50%;
+    --moz-transform-origin: 50% 50%;
+    --ms-transform-origin: 50% 50%;
+    --o-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+    opacity: 0.4;
+}
+
+#cd-vertical-nav .cd-label {
+    position: relative;
+    color: #bb9b64ff;
+    font-size: 21px;
+    padding-top: 10px;
+    padding-left: 12px;
+    line-height: 6px ;
+    font-size: 0.875rem;
+    -webkit-transition: -webkit-transform 0.2s, opacity 0.2s;
+    -moz-transition: -moz-transform 0.2s, opacity 0.2s;
+    transition: transform 0.2s, opacity 0.2s;
+    opacity: 0;
+    -webkit-transform-origin: 100% 50%;
+    --moz-transform-origin: 100% 50%;
+    --ms-transform-origin: 100% 50%;
+    --o-transform-origin: 100% 50%;
+    transform-origin: 100% 50%;
+    z-index:0;
+}
+
+.cd-scroll-down {
+    position: absolute;
+    left: 50%;
+    right: auto;
+    --webkit-transform: translateX(-50%);
+    --moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    --o-transform: translateX(-50%);
+    transform: translateX(-50%);
+    bottom: 40px;
+    width: 38px;
+    height: 44px;
+    /*background: url("../img/cd-arrow-bottom.svg") no-repeat center center;*/
+}
+
+/* SECTION CSS */
+
+#header {
+    height: 650px;
+    border: 2px solid black;
+    background-color: antiquewhite;
+    justify-content: center;
+    /*background-image: url("/img/rings.png");
+    background-size: 1000px auto;
+    background-repeat: no-repeat;
+    background-position: center;*/
+}
+#header img {
+    position: absolute;
+    opacity: 20%;
+    transform: scale(0.8);
+    display: flex;
+    width: 100%;
+    margin-left:auto;
+    margin-right: auto;
+
+}
+#section1 {
+    height: 650px;
+    background-color: #F8F5F0;
+}
+#section2 {
+    height: 725px;
+    background-color: #eeeae1ff;
+}
+#section3 {
+    height: 725px;
+    background-color: #F8F5F0;
+}
+#section4 {
+    height: 725px;
+    background-color: #dbd5c9;
+}
+#section5 {
+    height: 725px;
+    background-color: #F8F5F0;
+}
+#section6 {
+    height: 725px;
+    background-color: #dbd5c9;
+}
+#section7 {
+    height: 725px;
+    background-color: #dbd5c9;
+}
+#button-circles {
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    background-color: bisque;
+    padding: 5px 10px 5px 10px;
+    margin-bottom: 5px;
+    transition-duration: 100ms;
+    float: right;
+}
+#button-circles:hover {
+    cursor: pointer;
+    transform: scale(1.15) translateX(10px) translateY(5px);
+}
+#brush-reset {
+    font-size: 12px;
+    border-radius: 4px;
+    width: 60px;
+}
+
+.box {
+}
+
+@keyframes append-animate {
+    from {
+        transform: scaleY(0);
+        opacity: 0;
+    }
+    to {
+        transform: scaleY(1);
+        opacity: 1;
+    }
+}
+
+.new-box {
+    transform-origin: 50% 0;
+    animation: append-animate .15s linear;
+}
+#know-btn {
+    font-size: 18px;
+}
+#medal-text {
+    margin-top: 20px;
+}
+#know-btn {
+    border: none;
+    color: white;
+    background-color: darkgoldenrod;
+/*rgba(139,0,0,0.8)*/
+    border-radius: 4px;
+    padding: 5px 10px;
+}
+.chart-info {
+    border-radius: 4px;
+    text-align: center;
+    background-color: antiquewhite;
+    width: 360px;
+    margin-left: 200px;
+}
+#section7 div {
+    text-align: center;
+}
+#name-cards div {
+    justify-content: center;
+    padding: 3px;
+}
+#name-cards div div {
+    /*margin: 20px 35px 0 35px;*/
+    height: 500px;
+}
+.team-img img {
+    margin-top: 50px;
+    width: auto;
+    height: 280px;
+    border-radius: 20px;
+}
+.team-img h4 {
+    margin-top: 30px;
+}
+.team-img a {
+    text-decoration: none;
+    color: black;
+    padding: 5px;
+}
+.team-img a i {
+    font-size: 30px;
+}
